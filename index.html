@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAB Chat Bot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chatbox">
+          <div class="top-bar">
+            <div class="avatar">
+              <p>B</p>
+            </div>
+            <div class="name">BOT</div>
+            <div class="icons">
+              <i class="fas fa-phone"></i>
+              <i class="fas fa-video"></i>
+            </div>
+            <div class="menu">
+              <!-- <div class="dots"></div> -->
+            </div>
+          </div>
+          <div class="middle">
+            <div class="voldemort" id = "msg">
+              <div class="typing">
+                <div class="bubble">
+                  <div class="ellipsis one"></div>
+                  <div class="ellipsis two"></div>
+                  <div class="ellipsis three"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-bar">
+            <div class="chat">
+                <input type="text" id="messageInput" placeholder="Type a message..." />
+              <button type="submit">Send</button>
+            </div>
+          </div>
+        </div>
+        <div class="messages" id="messageContainer"></div>
+        <div class="profile">
+          <div class="avatar">
+            <p>H</p>
+          </div>
+          <div class="name2">Chat History</div>
+        </div>
+        <ul class="people">
+          <li class="person focus">
+            <span class="title">BOT </span>
+            <span class="time">2:50pm</span><br>
+            <span class="preview">What are you getting... Oh, oops...</span>
+          </li>
+        </ul>
+      </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
