@@ -1,9 +1,10 @@
 var express = require("express");
 var app = express();
 const nodemailer = require("nodemailer");
-
+const cors = require("cors");
 app.use(express.json());
 app.use(express.static("public"));
+app.use(cors());
 
 var transport = nodemailer.createTransport({
 	service: "Gmail",
