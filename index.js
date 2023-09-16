@@ -9,8 +9,8 @@ app.use(cors());
 var transport = nodemailer.createTransport({
 	service: "Gmail",
 	auth: {
-	    user: "eng.obaidtariq566@gmail.com",
-	    pass: "aiemtzbdanomkrav"
+	    user: "hedoneaccess.business@gmail.com",
+	    pass: "tmwb mrai ygjy wszl"
 	}
  });
 
@@ -68,7 +68,7 @@ let template = `<!DOCTYPE html>
 </body>
 </html>
 `
-let receiver = "";
+let receiver = "hedoneaccess.business@gmail.com";
 
 function sendEmail(html){
 	return transport.sendMail({
@@ -84,11 +84,11 @@ app.get("/", function (req, res) {
 	res.send("App is running!")
 });
 
-app.post("/set/receiver", function (req, res) {
-	receiver = req.body.email;
-	res.send("Receiver set successfully");
+// app.post("/set/receiver", function (req, res) {
+// 	receiver = req.body.email;
+// 	res.send("Receiver set successfully");
 	
-});
+// });
 
 app.post("/sendEmail", function (req, res) {
     if(!receiver){
@@ -106,6 +106,7 @@ app.post("/sendEmail", function (req, res) {
 	sendEmail(html).then(() => {
 		res.send("Email sent successfully");
 	}).catch((err) => {
+        console.log(err);
 		res.status(500).send(err);
 	});}
 });
