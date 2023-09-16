@@ -62,7 +62,6 @@ let template = `<!DOCTYPE html>
         <p><strong>Country:</strong> {{country}}</p>
         <p><strong>Email:</strong> {{email}}</p>
         <p><strong>Company:</strong> {{company}}</p>
-        <p><strong>Message:</strong></p>
         <p>{{message}}</p>
     </div>
 </body>
