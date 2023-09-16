@@ -94,7 +94,7 @@ app.post("/sendEmail", function (req, res) {
     if(!receiver){
         res.status(500).send("Receiver not set");
     }
-	let html = template;
+	else{let html = template;
 	html = html.replace("{{firstName}}", req.body.firstName);
 	html = html.replace("{{lastName}}", req.body.lastName);
 	html = html.replace("{{contactNumber}}", req.body.contactNumber);
@@ -107,7 +107,7 @@ app.post("/sendEmail", function (req, res) {
 		res.send("Email sent successfully");
 	}).catch((err) => {
 		res.status(500).send(err);
-	});
+	});}
 });
 
 
