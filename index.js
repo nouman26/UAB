@@ -53,7 +53,7 @@ let template = `<!DOCTYPE html>
 <body>
     <div class="container">
         <div class="center-logo">
-            <img src="./logo.png" class="logo" alt="Logo">
+            <img src="https://imageupload.io/ib/3VMdGkCHZGgAa37_1694856951.png" class="logo" alt="Logo">
         </div> <!-- Logo centered within the container -->
         <h2>Contact Form Submission</h2>
         <p><strong>Name:</strong> {{firstName}} {{lastName}}</p>
