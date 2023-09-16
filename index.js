@@ -61,8 +61,8 @@ let template = `<!DOCTYPE html>
         <p><strong>Profession:</strong> {{profession}}</p>
         <p><strong>Country:</strong> {{country}}</p>
         <p><strong>Email:</strong> {{email}}</p>
-        <p><strong>Company:</strong> {{company}}</p>
-        <p>{{message}}</p>
+        {{company}}
+        {{message}}
     </div>
 </body>
 </html>
