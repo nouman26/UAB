@@ -8,8 +8,8 @@ app.use(express.static("public"));
 var transport = nodemailer.createTransport({
 	service: "Gmail",
 	auth: {
-		user: "upturnosnotifications@gmail.com",
-		pass: "mmmk tqfp bopp jtwt"
+	    user: "eng.obaidtariq566@gmail.com",
+	    pass: "aiemtzbdanomkrav"
 	}
  });
 
@@ -68,12 +68,12 @@ let template = `<!DOCTYPE html>
 </body>
 </html>
 `
-
+let receiver = "";
 
 function sendEmail(html){
 	return transport.sendMail({
 		from: "Contact Alert <VanillePudding>", // sender address e.g. no-reply@xyz.com or "Fred Foo 👻" <foo@example.com>
-		to: "noumanarain0@gmail.com", // list of receivers e.g. bar@example.com, baz@example.com
+		to: receiver, // list of receivers e.g. bar@example.com, baz@example.com
 		subject: "Contact", // Subject line e.g. 'Hello ✔'
 		//text: text, // plain text body e.g. Hello world?
 		html:  html // html body e.g. '<b>Hello world?</b>'
@@ -84,7 +84,16 @@ app.get("/", function (req, res) {
 	res.send("App is running!")
 });
 
+app.post("/set/receiver", function (req, res) {
+	receiver = req.body.email;
+	res.send("Receiver set successfully");
+	
+});
+
 app.post("/sendEmail", function (req, res) {
+    if(!receiver){
+        res.status(500).send("Receiver not set");
+    }
 	let html = template;
 	html = html.replace("{{firstName}}", req.body.firstName);
 	html = html.replace("{{lastName}}", req.body.lastName);
